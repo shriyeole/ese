@@ -1,0 +1,29 @@
+ion-card {
+  max-width: 500px;
+  margin: auto;
+  margin-top: 50px;
+  text-align: center;
+}
+
+ion-card-header {
+  background-color: #007bff;
+  color: white;
+}
+
+ion-card-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+ion-card-content {
+  padding: 20px;
+}
+
+ion-row {
+  margin-top: 20px;
+}
+
+ion-button {
+  --background: #007bff;
+  --color: white;
+}

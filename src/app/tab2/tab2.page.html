@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Quiz App</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngIf="!showResult">
+    <ion-card-header>
+      <ion-card-title>Question {{ currentIndex + 1 }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>{{ questions[currentIndex].question }}</p>
+      <ion-list>
+        <ion-radio-group [(ngModel)]="selectedAnswer">
+          <ion-item *ngFor="let option of questions[currentIndex].options">
+            <ion-label>{{ option }}</ion-label>
+            <ion-radio [value]="option"></ion-radio>
+          </ion-item>
+        </ion-radio-group>
+      </ion-list>
+    </ion-card-content>
+    <ion-row>
+      <ion-col>
+        <ion-button (click)="checkAnswer()">Next</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+  <ion-card *ngIf="showResult">
+    <ion-card-content>
+      <h2>Quiz Result</h2>
+      <p>You scored {{ score }} out of {{ questions.length }}</p>
+      <ion-button (click)="restartQuiz()">Restart</ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
